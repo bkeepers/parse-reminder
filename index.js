@@ -11,7 +11,6 @@ module.exports = (input, from) => {
   let [, who, what] = match
 
   const when = chrono.parse(what, from, {forwardDate: true})
-  when[0].start.assign('timezoneOffset', 0)
 
   when.forEach(w => {
     what = what.replace(w.text, '')
