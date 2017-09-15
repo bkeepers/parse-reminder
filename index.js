@@ -2,6 +2,14 @@ const chrono = require('chrono-node')
 
 const matcher = /^remind (me)(?: to )?(.*)$/
 
+const parser = new chrono.Chrono()
+parser.refiners.push(require('./lib/refiners/start-of-day'))
+
+const options = {
+  forwardDate: true,
+  startOfDay: 9
+}
+
 module.exports = (input, from) => {
   const match = input.match(matcher)
   if (!match) {
@@ -13,7 +21,7 @@ module.exports = (input, from) => {
   let [, who, what] = match
 
   // Use chrono to extract the `when` from the `what`
-  const when = chrono.parse(what, from, {forwardDate: true})
+  const when = parser.parse(what, from, options)
 
   // Remove any time expressions from the `what`
   when.forEach(w => {
