@@ -10,6 +10,8 @@ describe('parse-reminder', () => {
   const examples = {
     'nothing to see here': null,
 
+    'remind me nope': null,
+
     'remind me to call the doctor tomorrow': {
       who: 'me', when: new Date(2017, 6, 6, 9, 0, 0, 0), what: 'call the doctor'
     },

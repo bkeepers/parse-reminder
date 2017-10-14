@@ -23,6 +23,11 @@ module.exports = (input, from) => {
   // Use chrono to extract the `when` from the `what`
   const when = parser.parse(what, from, options)
 
+  if (when.length < 1) {
+    // What kind of reminder doesn't have a date?
+    return null
+  }
+
   // Remove any time expressions from the `what`
   when.forEach(w => {
     what = what.replace(w.text, '')
