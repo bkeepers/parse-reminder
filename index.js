@@ -1,6 +1,6 @@
 const chrono = require('chrono-node')
 
-const matcher = /^remind (me)(?: to )?(.*)$/
+const matcher = /^remind @?([^\s]+)(?: to )?(.*)$/
 
 const parser = new chrono.Chrono()
 parser.refiners.push(require('./lib/refiners/start-of-day'))

@@ -81,6 +81,18 @@ describe('parse-reminder', () => {
 
     'remind me tomorrow at noon to buy the new iPhone': {
       who: 'me', when: new Date(2017, 6, 6, 12, 0, 0, 0), what: 'buy the new iPhone'
+    },
+
+    'remind someone to have coffee tomorrow at noon': {
+      who: 'someone', when: new Date(2017, 6, 6, 12, 0, 0, 0), what: 'have coffee'
+    },
+
+    'remind @meaku to have coffee tomorrow at noon': {
+      who: 'meaku', when: new Date(2017, 6, 6, 12, 0, 0, 0), what: 'have coffee'
+    },
+
+    'remind @probot/everyone to have coffee tomorrow at noon': {
+      who: 'probot/everyone', when: new Date(2017, 6, 6, 12, 0, 0, 0), what: 'have coffee'
     }
   }
 
