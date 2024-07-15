@@ -1,7 +1,8 @@
 process.env.TZ = 'UTC'
 
-const expect = require('expect')
+const expect = require('expect').default
 const parseReminder = require('..')
+const { describe, it } = require('mocha')
 
 // All time expressions will be relative to Wednesday, July 5 at 4:03:02.0 UTC
 const REFERENCE_DATE = new Date(2017, 6, 5, 4, 3, 2, 0)
