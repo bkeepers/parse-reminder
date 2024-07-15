@@ -62,12 +62,10 @@ describe('parse-reminder', () => {
     },
 
     'remind me at 4:00 to check in with Dan': {
-      // FIXME: fix future refiner to work with times later in the day
-      who: 'me', when: new Date(2017, 6, 5, 4, 0, 0, 0), what: 'check in with Dan'
+      who: 'me', when: new Date(2017, 6, 6, 4, 0, 0, 0), what: 'check in with Dan'
     },
 
     'remind me 10am to go to work': {
-      // FIXME: fix future refiner to work with times later in the day
       who: 'me', when: new Date(2017, 6, 5, 10, 0, 0, 0), what: 'go to work'
     },
 
