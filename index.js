@@ -37,5 +37,5 @@ module.exports = (input, from) => {
   what = what.trim()
   what = what.replace(/^(to|that) /, '').replace(/ on$/, '')
 
-  return {who, what, when: when[0].start.date()}
+  return { who, what, when: when[0].start.date() }
 }

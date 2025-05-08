@@ -1,7 +1,8 @@
 process.env.TZ = 'UTC'
 
-const expect = require('expect')
+const expect = require('expect').default
 const parseReminder = require('..')
+const { describe, it } = require('mocha')
 
 // All time expressions will be relative to Wednesday, July 5 at 4:03:02.0 UTC
 const REFERENCE_DATE = new Date(2017, 6, 5, 4, 3, 2, 0)
@@ -62,12 +63,10 @@ describe('parse-reminder', () => {
     },
 
     'remind me at 4:00 to check in with Dan': {
-      // FIXME: fix future refiner to work with times later in the day
-      who: 'me', when: new Date(2017, 6, 5, 4, 0, 0, 0), what: 'check in with Dan'
+      who: 'me', when: new Date(2017, 6, 6, 4, 0, 0, 0), what: 'check in with Dan'
     },
 
     'remind me 10am to go to work': {
-      // FIXME: fix future refiner to work with times later in the day
       who: 'me', when: new Date(2017, 6, 5, 10, 0, 0, 0), what: 'go to work'
     },
 
